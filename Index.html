@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Love Surprise 💕</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, sans-serif;
+}
+
+body{
+background: linear-gradient(135deg,#ff758c,#ff7eb3);
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+position:relative;
+}
+
+/* Floating Hearts */
+.heart{
+position:absolute;
+font-size:25px;
+animation: float 6s linear infinite;
+opacity:0.8;
+}
+
+@keyframes float{
+0%{transform: translateY(100vh); opacity:1;}
+100%{transform: translateY(-10vh); opacity:0;}
+}
+
+/* Main Container */
+.container{
+z-index:10;
+}
+
+.big-heart{
+font-size:120px;
+animation: beat 1s infinite;
+}
+
+@keyframes beat{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.2);}
+}
+
+h1{
+font-size:45px;
+margin:20px 0;
+text-shadow:0 0 20px white;
+animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px white;}
+to{ text-shadow:0 0 30px red;}
+}
+
+button{
+margin-top:30px;
+padding:15px 30px;
+border:none;
+border-radius:50px;
+font-size:18px;
+font-weight:bold;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#ff4d6d;
+color:white;
+transform:scale(1.1);
+}
+
+.message-box{
+display:none;
+margin-top:25px;
+padding:20px;
+background:rgba(255,255,255,0.2);
+border-radius:15px;
+max-width:500px;
+backdrop-filter: blur(10px);
+font-size:16px;
+line-height:1.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="big-heart">❤️</div>
+<h1>I Love You Babdya 😘💕</h1>
+
+<button onclick="showMessage()">💝 Something More For You</button>
+
+<div class="message-box" id="loveMessage">
+Happy Anniversary, my love 💕 😘 Every day with you feels like a beautiful dream.💗😘  
+Thank you for loving me, supporting me, and making my life so special. 💗  
+I’m so lucky to have you forever by my side.🧿🥺  
+You are not just my partner, you are my peace, my happiness, and my biggest blessing. 😘💗  
+I promise to love you more with each passing day.😘💗  
+Through every smile, every tear, every moment — I choose you. 💗🧿🥺  
+Today, tomorrow, and always. I love you so much 😘💗
+</div>
+
+</div>
+
+<script>
+// Floating hearts animation
+function createHeart(){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"vw";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+}
+setInterval(createHeart,700);
+
+// Show Anniversary Message
+function showMessage(){
+document.getElementById("loveMessage").style.display="block";
+}
+</script>
+
+</body>
+</html>
